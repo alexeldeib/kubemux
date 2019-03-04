@@ -29,6 +29,11 @@
   revision = "34472d076c304d1dc65b4dc115aebf99f202d06e"
   # version = "kubernetes-1.13.4"
 
+[[override]]
+  name = "golang.org/x/sys"
+  # revision = "34472d076c304d1dc65b4dc115aebf99f202d06e"
+  branch = "master"
+
 [prune]
   go-tests = true
   unused-packages = true
