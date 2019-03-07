@@ -32,10 +32,10 @@ var (
 	appID     string
 	appKey    string
 	appTenant string
-	authArgs  = map[string]string{
-		"AppID":     appID,
-		"AppKey":    appKey,
-		"AppTenant": appTenant,
+	authArgs  = map[string]*string{
+		"AppID":     &appID,
+		"AppKey":    &appKey,
+		"AppTenant": &appTenant,
 	}
 )
 
@@ -137,7 +137,7 @@ func RemoveKubeconfig(path string) {
 func IsCLI() bool {
 	empty := make([]string, 0)
 	for arg, val := range authArgs {
-		if val == "" {
+		if *val == "" {
 			empty = append(empty, arg)
 		}
 	}
